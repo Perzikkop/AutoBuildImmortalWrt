@@ -39,13 +39,20 @@ else
   ls -lah /home/build/immortalwrt/packages/
 fi
 
-# 增加 istore 官方源
-grep -q '^src/gz istore ' repositories.conf || \
-echo "src/gz istore https://istore.linkease.com/repo/all" >> repositories.conf
+REPO_CONF="/home/build/immortalwrt/repositories.conf"
 
-# 增加 nikki 官方源
-grep -q '^src/gz nikki ' repositories.conf || \
-echo "src/gz nikki https://nikkinikki.pages.dev/openwrt-${luci_version}/x86_64/nikki" >> repositories.conf
+# iStore（可选）
+if echo "$CUSTOM_PACKAGES" | grep -q "luci-app-store"; then
+  grep -q '^src/gz istore ' "$REPO_CONF" || \
+  echo "src/gz istore https://istore.linkease.com/repo/all" >> "$REPO_CONF"
+fi
+
+# Nikki（可选）
+if echo "$CUSTOM_PACKAGES" | grep -q "luci-app-nikki"; then
+  grep -q '^src/gz nikki ' "$REPO_CONF" || \
+  echo "src/gz nikki https://nikkinikki.pages.dev/openwrt-24.10/x86_64/nikki" >> "$REPO_CONF"
+fi
+
 
 # 输出调试信息
 echo "$(date '+%Y-%m-%d %H:%M:%S') - 开始编译..."
