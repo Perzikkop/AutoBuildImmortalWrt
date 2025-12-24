@@ -131,8 +131,8 @@ jobs:
           tag_name: Autobuild-x86-64
           body_path: ${{ github.workspace }}/info.md
           files: |
-            ${{ github.workspace }}/immortalwrt-${luci_version}-x86-64-generic-squashfs-combined-efi.img.gz
-            ${{ github.workspace }}/immortalwrt-${luci_version}-x86-64-generic-squashfs-combined-efi.img.gz.sha256
+            ${{ github.workspace }}/immortalwrt-x86-64-generic-squashfs-combined-efi.img.gz
+            ${{ github.workspace }}/immortalwrt-x86-64-generic-squashfs-combined-efi.img.gz.sha256
           token: ${{ secrets.GITHUB_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
