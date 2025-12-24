@@ -24,7 +24,7 @@ on:
         default: '2048'
       enable_store:
         description: "集成 store 商店"
-        required: true
+        required: false
         type: boolean
         default: true
       include_docker:
