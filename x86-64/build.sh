@@ -39,25 +39,8 @@ else
   ls -lah /home/build/immortalwrt/packages/
 fi
 
-REPO_CONF="/home/build/immortalwrt/repositories.conf"
-
-# iStore（可选）
-if echo "$CUSTOM_PACKAGES" | grep -q "luci-app-store"; then
-  grep -q '^src/gz istore ' "$REPO_CONF" || \
-  echo "src/gz istore https://istore.linkease.com/repo/all" >> "$REPO_CONF"
-fi
-
-# Nikki（可选）
-if echo "$CUSTOM_PACKAGES" | grep -q "luci-app-nikki"; then
-  grep -q '^src/gz nikki ' "$REPO_CONF" || \
-  echo "src/gz nikki https://nikkinikki.pages.dev/openwrt-24.10/x86_64/nikki" >> "$REPO_CONF"
-fi
-
-
 # 输出调试信息
 echo "$(date '+%Y-%m-%d %H:%M:%S') - 开始编译..."
-
-
 
 # 定义所需安装的包列表 下列插件你都可以自行删减
 PACKAGES=""
@@ -67,7 +50,7 @@ PACKAGES="$PACKAGES luci-i18n-firewall-zh-cn"
 PACKAGES="$PACKAGES luci-app-argon-config"
 PACKAGES="$PACKAGES luci-i18n-argon-config-zh-cn"
 PACKAGES="$PACKAGES luci-i18n-ttyd-zh-cn"
-PACKAGES="$PACKAGES luci-app-openclash"
+#PACKAGES="$PACKAGES luci-app-openclash"
 PACKAGES="$PACKAGES openssh-sftp-server"
 PACKAGES="$PACKAGES snmpd"
 PACKAGES="$PACKAGES socat"
