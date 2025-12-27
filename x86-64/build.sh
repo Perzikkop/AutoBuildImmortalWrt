@@ -62,11 +62,9 @@ PACKAGES="$PACKAGES luci-i18n-ddns-zh-cn"
 PACKAGES="$PACKAGES ddns-scripts_aliyun"
 PACKAGES="$PACKAGES ddns-scripts-cloudflare"
 PACKAGES="$PACKAGES kmod-nft-tproxy"
-#PACKAGES="$PACKAGES shadow-chsh"
+PACKAGES="$PACKAGES shadow-chsh"
 PACKAGES="$PACKAGES luci-i18n-wechatpush-zh-cn"
 PACKAGES="$PACKAGES etherwake"
-
-# 增加几个必备组件 方便用户安装iStore
 PACKAGES="$PACKAGES fdisk"
 PACKAGES="$PACKAGES script-utils"
 PACKAGES="$PACKAGES luci-i18n-samba4-zh-cn"

@@ -169,7 +169,7 @@ uci commit dropbear
 
 # 修改编译者信息
 FILE_PATH="/etc/openwrt_release"
-NEW_DESCRIPTION="Compiled by Ananaskop"
+NEW_DESCRIPTION="Compiled by Perzikkop"
 sed -i "s/DISTRIB_DESCRIPTION='[^']*'/DISTRIB_DESCRIPTION='$NEW_DESCRIPTION'/" "$FILE_PATH"
 
 # 去除 luci-app-advancedplus 的 zsh 调用
