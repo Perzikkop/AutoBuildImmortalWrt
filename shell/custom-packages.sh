@@ -27,7 +27,7 @@ CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-nikki-zh-cn"
 # VPN
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-tailscale luci-i18n-tailscale-zh-cn"
 # 分区扩容 by sirpdboy 
-CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-partexp luci-i18n-partexp-zh-cn"
+#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-partexp luci-i18n-partexp-zh-cn"
 # 酷猫主题 by sirpdboy 
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-theme-kucat"
 # 进阶设置 by sirpdboy 
@@ -52,6 +52,6 @@ CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-turboacc"
 # Easytier
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES easytier luci-app-easytier"
 # 统一文件共享
-CUSTOM_PACKAGES="$CUSTOM_PACKAGES webdav2 luci-app-unishare"
+#CUSTOM_PACKAGES="$CUSTOM_PACKAGES webdav2 luci-app-unishare"
 # IPSec VPN 服务器
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-ipsec-vpnd-zh-cn"
