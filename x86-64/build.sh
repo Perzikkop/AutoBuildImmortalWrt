@@ -2,7 +2,7 @@
 # Log file for debugging
 echo "🔄 修改软件源为镜像源..."
 
-sed -i 's|https://downloads.immortalwrt.org|https://mirrors.vsean.net/openwrt|g' \
+sed -i 's|https://downloads.immortalwrt.org|https://mirrors.aliyun.com/openwrt|g' \
     /home/build/immortalwrt/repositories.conf
     
 source shell/custom-packages.sh
