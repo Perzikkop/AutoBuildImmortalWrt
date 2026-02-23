@@ -1,6 +1,10 @@
 #!/bin/bash
 # Log file for debugging
-export NO_UPDATE=1
+echo "🔄 修改软件源为镜像源..."
+
+sed -i 's|https://downloads.immortalwrt.org|https://mirrors.vsean.net/openwrt|g' \
+    /home/build/immortalwrt/repositories.conf
+    
 source shell/custom-packages.sh
 echo "第三方软件包: $CUSTOM_PACKAGES"
 LOGFILE="/tmp/uci-defaults-log.txt"
