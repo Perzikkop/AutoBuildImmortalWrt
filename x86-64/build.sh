@@ -1,5 +1,6 @@
 #!/bin/bash
 # Log file for debugging
+export NO_UPDATE=1
 source shell/custom-packages.sh
 echo "第三方软件包: $CUSTOM_PACKAGES"
 LOGFILE="/tmp/uci-defaults-log.txt"
@@ -110,8 +111,12 @@ fi
 echo "$(date '+%Y-%m-%d %H:%M:%S') - Building image with the following packages:"
 echo "$PACKAGES"
 
-make image PROFILE="generic" PACKAGES="$PACKAGES" FILES="/home/build/immortalwrt/files" ROOTFS_PARTSIZE=$PROFILE
-
+make image \
+  PROFILE="generic" \
+  PACKAGES="$PACKAGES" \
+  FILES="/home/build/immortalwrt/files" \
+  ROOTFS_PARTSIZE=$PROFILE
+  
 if [ $? -ne 0 ]; then
     echo "$(date '+%Y-%m-%d %H:%M:%S') - Error: Build failed!"
     exit 1
