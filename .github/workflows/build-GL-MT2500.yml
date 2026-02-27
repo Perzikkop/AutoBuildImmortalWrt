@@ -1,4 +1,4 @@
-name: Build ImmortalWrt GL-MT2500 (Pure)
+name: Build ImmortalWrt GL-MT2500
 
 on:
   workflow_dispatch:
