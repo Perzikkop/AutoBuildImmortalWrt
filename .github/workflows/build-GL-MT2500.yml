@@ -1,4 +1,4 @@
-name: Build ImmortalWrt GL-MT2500
+name: build-GL-MT2500-immortalwrt-24.10.x
 
 on:
   workflow_dispatch:
