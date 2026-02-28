@@ -5,13 +5,12 @@ Fork from https://github.com/wukongdaily/AutoBuildImmortalWrt
 它是一个工作流。可快速构建 带docker且支持自定义固件大小的 immortalWrt，感谢 wukongdaily
 > 1、支持自定义固件大小 默认2GB <br>
 > 2、支持预安装docker（可选）<br>
-> 3、仅支持x86-64<br>
-> 4、新增用户预设置pppoe拨号功能<br>
-> 5、增加了升级不修改网络配置<br>
-> 6、可以自行修改build.sh增加插件<br>
+> 3、新增用户预设置pppoe拨号功能<br>
+> 4、增加了升级不修改网络配置<br>
+> 5、可以自行修改build.sh增加插件<br>
 
 ## 如何查询都有哪些插件?
-https://mirrors.sjtug.sjtu.edu.cn/immortalwrt/releases/24.10.1/packages/x86_64/luci/
+https://mirrors.sjtug.sjtu.edu.cn/immortalwrt/releases/24.10.5/packages/x86_64/luci/
 
 ## 旁路由的用户必读
 近期不少用户修改配置文件中的默认ip地址，误认为这个工作流可以直接设置旁路ip。这是巨大的误解，这样设置就乱套了。<br>
