@@ -82,7 +82,7 @@ jobs:
             -v "${{ github.workspace }}/arch/arch.conf:/home/build/immortalwrt/files/etc/opkg/arch.conf" \
             -v "${{ github.workspace }}/shell:/home/build/immortalwrt/shell" \
             -v "${{ github.workspace }}/mediatek-filogic/build24.sh:/home/build/immortalwrt/build.sh" \
-            -e PROFILE=glinet_gl-mt2500 \
+            -e PROFILE=glinet_gl-mt2500a \
             -e INCLUDE_DOCKER=${{ inputs.include_docker }} \
             -e ENABLE_PPPOE=${{ inputs.enable_pppoe }} \
             -e PPPOE_ACCOUNT=${{ inputs.pppoe_account }} \
