@@ -83,17 +83,14 @@ jobs:
           echo "platform=mediatek/filogic" >> $GITHUB_ENV
           tag=mediatek-filogic-openwrt-24.10.5
 
-          # 根据硬件版本选择 PROFILE + TAG 后缀
+          # 根据硬件版本选择 PROFILE 
           if [ "${{ github.event.inputs.hardware_variant }}" == "maxlinear" ]; then
             PROFILE_NAME=glinet_gl-mt2500
-            TAG_SUFFIX=maxlinear
           else
             PROFILE_NAME=glinet_gl-mt2500-airoha
-            TAG_SUFFIX=airoha
           fi
 
           echo "PROFILE_NAME=$PROFILE_NAME" >> $GITHUB_ENV
-          echo "TAG_SUFFIX=$TAG_SUFFIX" >> $GITHUB_ENV
           echo "当前编译版本: $PROFILE_NAME"
 
           docker run --rm -i \
@@ -135,7 +132,7 @@ jobs:
         with:
           tag_name: glinet_gl-mt2500-${{ github.event.inputs.hardware_variant }}
           name: ImmortalWrt-GL-MT2500-${{ github.event.inputs.hardware_variant }}
-          body_path: info.md
+          body_path: router-info.md
           files: |
             bin/targets/mediatek/filogic/*
         env:
