@@ -114,22 +114,29 @@ jobs:
 
       - name: Create Release Info
         run: |
-          echo "## GL-MT2500 ImmortalWrt 24.10.5 (${{ env.TAG_SUFFIX }})" > info.md
-          echo "" >> info.md
-          echo "### 硬件版本: ${{ github.event.inputs.hardware_variant }}" >> info.md
-          echo "### 管理地址: ${{ github.event.inputs.custom_router_ip }}" >> info.md
+          cat > ${{ github.workspace }}/router-info.md <<EOF
+          ## 📡 路由器后台信息
+          - ## 硬件版本: ${{ github.event.inputs.hardware_variant }}
+          - 🏠 **后台地址**: ${{ github.event.inputs.custom_router_ip }}
+          - 👤 **用户名**: root
+          - 🔑 **密码**: 无
+          EOF
 
           if [ "${{ github.event.inputs.include_docker }}" == "yes" ]; then
-            echo "### 默认包含 Docker" >> info.md
+            extra_content="#### 默认带docker"
+            echo -e "\n$extra_content" >> ${{ github.workspace }}/router-info.md
+          else
+            echo -e "\n#### 不带docker" >> ${{ github.workspace }}/router-info.md
           fi
+
 
       - name: Upload Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: glinet_gl-mt2500-${{ env.TAG_SUFFIX }}
-          name: ImmortalWrt-GL-MT2500-${{ env.TAG_SUFFIX }}
+          tag_name: glinet_gl-mt2500-${{ github.event.inputs.hardware_variant }}
+          name: ImmortalWrt-GL-MT2500-${{ github.event.inputs.hardware_variant }}
           body_path: info.md
           files: |
-            bin/targets/${{ env.platform }}/*
+            bin/targets/mediatek/filogic/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
