@@ -105,11 +105,18 @@ jobs:
 
       - name: Create info
         run: |
+          cat > ${{ github.workspace }}/router-info.md <<EOF
+          ## 📡 路由器后台信息          
+          - 🏠 **后台地址**: ${{ github.event.inputs.custom_router_ip }}
+          - 👤 **用户名**: root
+          - 🔑 **密码**: 无
+          EOF
+
           if [ "${{ github.event.inputs.include_docker }}" == "yes" ]; then
             extra_content="#### 默认带docker"
-            echo -e "\n$extra_content" >> ${{ github.workspace }}/info.md
+            echo -e "\n$extra_content" >> ${{ github.workspace }}/router-info.md
           else
-            echo -e "NO docker"
+            echo -e "\n#### 不带docker" >> ${{ github.workspace }}/router-info.md
           fi
 
       - name: Upload ImmortWrt as release assets
