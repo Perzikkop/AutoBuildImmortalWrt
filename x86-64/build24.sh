@@ -57,7 +57,7 @@ PACKAGES="$PACKAGES luci-i18n-argon-config-zh-cn"
 PACKAGES="$PACKAGES luci-i18n-ttyd-zh-cn"
 PACKAGES="$PACKAGES luci-app-openclash"
 PACKAGES="$PACKAGES openssh-sftp-server"
-PACKAGES="$PACKAGES snmpd"
+#PACKAGES="$PACKAGES snmpd"
 PACKAGES="$PACKAGES socat"
 PACKAGES="$PACKAGES luci-i18n-package-manager-zh-cn"
 PACKAGES="$PACKAGES luci-compat"
@@ -70,7 +70,7 @@ PACKAGES="$PACKAGES shadow-chsh"
 PACKAGES="$PACKAGES etherwake"
 PACKAGES="$PACKAGES fdisk"
 PACKAGES="$PACKAGES script-utils"
-PACKAGES="$PACKAGES luci-i18n-samba4-zh-cn"
+#PACKAGES="$PACKAGES luci-i18n-samba4-zh-cn"
 
 
 # ======== shell/custom-packages.sh =======
