@@ -13,21 +13,21 @@ on:
           - 'maxlinear'
 
       custom_router_ip:
-        description: "请设置路由器的管理地址 (例如: 192.168.21.1)"
+        description: "请设置路由器的管理地址 (例如：192.168.21.1)"
         required: true
         default: "192.168.21.1"
 
       include_docker:
         description: "是否编译 Docker 插件"
         required: true
-        default: 'yes'
+        default: 'no'
         type: choice
         options:
           - 'yes'
           - 'no'
 
       enable_pppoe:
-        description: "是否配置 PPPoE 拨号?"
+        description: "是否配置 PPPoE 拨号？"
         required: true
         default: 'no'
         type: choice
@@ -111,10 +111,10 @@ jobs:
           EOF
 
           if [ "${{ github.event.inputs.include_docker }}" == "yes" ]; then
-            extra_content="#### 默认带docker"
+            extra_content="#### 默认带 docker"
             echo -e "\n$extra_content" >> ${{ github.workspace }}/router-info.md
           else
-            echo -e "\n#### 不带docker" >> ${{ github.workspace }}/router-info.md
+            echo -e "\n#### 不带 docker" >> ${{ github.workspace }}/router-info.md
           fi
 
 
